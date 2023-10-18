@@ -1,0 +1,79 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+{% block content%}
+
+		<!-- Start Banner Area -->
+		<!-- Start Banner Area -->
+		<section class="banner-area organic-breadcrumb">
+			<div class="container">
+				<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+					<div class="col-first">
+						<h1>Login/Register</h1>
+						<nav class="d-flex align-items-center">
+							<a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
+							<a href="category.html">Login/Register</a>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+
+<section class="login_box_area section_gap">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 ">
+          {% include 'alert.html' %}
+          <div class="login_form_inner">
+            
+            <h3>Register</h3>
+            <form class="row login_form" method="POST" id="contactForm" action="{% url 'cp_register' %}">
+                {% csrf_token %}
+              <div class="col-md-12 form-group">
+                <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name"
+                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'">
+              </div>
+              <div class="col-md-12 form-group">
+                <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name"
+                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'">
+              </div>
+              <div class="col-md-12 form-group">
+                <input type="email" class="form-control" id="name" name="email" placeholder="Email"
+                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'">
+              </div>
+              <div class="col-md-12 form-group">
+                <input type="text" class="form-control" id="name" name="mobile" placeholder="Mobile"
+                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mobile'">
+              </div>
+              <div class="col-md-12 form-group">
+                <input type="password" class="form-control" id="name" name="password"
+                  placeholder="Password" onfocus="this.placeholder = ''"
+                  onblur="this.placeholder = 'Password'">
+              </div>
+              <div class="col-md-12 form-group">
+                <input type="password" class="form-control" id="name" name="rePassword"
+                  placeholder="Re-enter Password" onfocus="this.placeholder = ''"
+                  onblur="this.placeholder = 'Re-enter Password'">
+              </div>
+              <!-- <% if(typeof errMessage !=='undefined' ){ //for displaying message %>
+                <p style="color: red;">
+                  <%= errMessage %> -->
+                </p>
+
+                      <div class="col-md-12 form-group">
+                        <button type="submit" value="submit"
+                          class="primary-btn">Register</button>
+                        <a href="/login">Back to Login</a>
+                      </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%endblock%}
